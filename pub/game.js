@@ -9,11 +9,11 @@ function draw() {
   
   things.push([mouseX,mouseY])
   
-  if (things.length > 40) {
+  if (things.length > 1000) {
     things.splice(0, 1)
   }
   
   things.forEach(i => {
-    circle(i[0],i[1], 30)
+    circle(i[0],i[1], 250)
   })
 }
