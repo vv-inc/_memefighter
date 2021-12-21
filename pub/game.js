@@ -16,7 +16,7 @@ function keyPressed() {
 function draw() {
   background(220)
   things.forEach(i => {
-    circle(i[0], i[1], 100/i[2])
+    circle(i[0], i[1], i[2])
   })
 }
 
@@ -26,4 +26,9 @@ function store() {
   if (things.length > max) {
     things.splice(0, 1)
   }
+
+  things.forEach(i => {
+    i[2] ++;
+  })
+
 }
