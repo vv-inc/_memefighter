@@ -9,15 +9,15 @@ function mouseMoved() {
   store()
 }
 
-function keyPressed() {
-  store()
-}
-
 function draw() {
   background(220)
   things.forEach(i => {
     circle(i[0], i[1], i[2])
   })
+
+  if (keyIsPressed) {
+    store()
+  }
 }
 
 function store() {
@@ -28,7 +28,6 @@ function store() {
   }
 
   things.forEach(i => {
-    i[2] += dist(pmouseX, pmouseY, mouseX, mouseY);
+    i[2] += dist(pmouseX, pmouseY, mouseX, mouseY) * 0.1;
   })
-
 }
