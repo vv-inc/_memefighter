@@ -28,7 +28,7 @@ function store() {
   }
 
   things.forEach(i => {
-    i[2] ++;
+    i[2] += dist(pmouseX, pmouseY, mouseX, mouseY);
   })
 
 }
