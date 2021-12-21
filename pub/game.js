@@ -16,7 +16,7 @@ function keyPressed() {
 function draw() {
   background(220)
   things.forEach(i => {
-    circle(i[0],i[1], (50-i[2] || 0) + 10)
+    circle(i[0], i[1], 100/i[2])
   })
 }
 
