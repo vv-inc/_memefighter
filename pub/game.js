@@ -1,4 +1,4 @@
-const max = 100
+const max = 200
 let things = []
 
 function setup() {
@@ -12,7 +12,7 @@ function mouseMoved() {
 function draw() {
   background(220)
   things.forEach(i => {
-    circle(i[0], i[1], i[2])
+    circle(i[0], i[1], i[2]*2)
   })
 
   if (keyIsPressed) {
