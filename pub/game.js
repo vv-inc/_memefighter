@@ -14,8 +14,9 @@ let animFrame = {
 
 	sz: 1
 }
-let violence = 16
+let violence = 11
 let mcSpeed = 0.4
+let timer = 0;
 
 function setup() {
 	createCanvas(400, 400)
@@ -23,15 +24,24 @@ function setup() {
 	angleMode(DEGREES)
 	frameRate(60)
 
-	anim = []
+	anim = [
+		{
+			x: 0,
+			y: 0,
+
+			r: 0,
+
+			sz: 1
+		}
+	]
 	for (let i = 0; i < 16; i ++) {
 		anim.push({
 			x: random(-violence, violence),
-			y: random(-violence, violence),
+			y: random(-violence + 10, violence + 10),
 
 			r: random(-violence, violence),
 
-			sz: map(i, 0, 16, 0.9, 1.1)
+			sz: map(i, 0, 16, 1, 1.05)
 		})
 	}
 
@@ -39,6 +49,12 @@ function setup() {
 }
 
 function update() {
+	if (timer > 32) {
+		if (timer > 64) { 
+			timer = 0
+		} 
+		return
+	}
 	animIndex ++
 	animIndex = animIndex % anim.length
 	animFrame.x = lerp(animFrame.x, anim[animIndex].x, mcSpeed)
